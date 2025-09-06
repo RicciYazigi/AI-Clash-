@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Clash: The Digital Pantheon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E62B1E',
+            'primary-dark': '#C3073F',
+            dark: '#1A1A1D',
+            light: '#F5F5F5'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            'glow': '0 0 15px rgba(230, 43, 30, 0.3)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      .hover-glow:hover {
+        box-shadow: 0 0 20px rgba(230, 43, 30, 0.4);
+        transform: translateY(-4px);
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        transition: all 0.3s ease;
+      }
+      .timeline-item:hover .timeline-icon {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+      }
+    }
+    .timeline-marker {
+      width: 12px;
+      height: 12px;
+      @apply rounded-full bg-gray-600 border-2 border-gray-400 transition-all duration-300;
+    }
+    .timeline-marker.active {
+      @apply bg-primary border-primary scale-125;
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background: #2a2a2d;
+      border-radius: 3px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #E62B1E;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-dark text-light font-sans leading-relaxed overflow-x-hidden">
+  <!-- HERO SECTION -->
+  <section class="relative min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-b from-black via-dark to-transparent overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-dark rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s"></div>
+    </div>
+
+    <div class="relative z-10 text-center max-w-5xl mx-auto">
+      <!-- Logo -->
+      <div class="mb-8">
+        <h1 class="text-5xl md:text-7xl font-bold mb-2 bg-gradient-to-r from-light to-gray-400 bg-clip-text text-transparent">
+          AI Clash
+        </h1>
+        <p class="text-xl md:text-2xl opacity-80 font-medium">The Digital Pantheon</p>
+      </div>
+
+      <!-- Headlines -->
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        Where Artificial Intelligences <br>Become <span class="text-primary">Legends</span>
+      </h2>
+      <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
+        Witness the epic evolution of AI through historical narratives and digital glory
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <button class="bg-primary hover-glow text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50">
+          Enter the Arena
+        </button>
+        <button class="border border-gray-600 hover:border-primary text-gray-300 hover:text-primary font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 backdrop-blur-sm bg-black/20 hover:bg-primary/10">
+          Watch Teaser
+        </button>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- TIMELINE SECTION -->
+  <section class="py-20 px-6 bg-black/50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold mb-4">The Evolution Saga: <br>From Code to Legend</h3>
+        <p class="text-lg opacity-80 max-w-3xl mx-auto">A chronological journey through the ages of artificial intelligence</p>
+      </div>
+
+      <!-- Horizontal Timeline -->
+      <div class="scroll-container overflow-x-auto pb-6 hide-scrollbar">
+        <div class="flex space-x-8 min-w-max">
+          <!-- Era 1: Origins -->
+          <div class="timeline-item flex-shrink-0 w-64">
+            <div class="text-center">
+              <div class="timeline-icon mx-auto mb-4">
+                <div class="timeline-marker active mx-auto mb-2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-primary">2010-2017</span>
+              <h4 class="text-xl font-bold mt-2">Origins</h4>
+              <p class="text-sm mt-2 opacity-70">The dawn of neural networks and early machine learning breakthroughs that laid the foundation.</p>
+            </div>
+          </div>
+
+          <!-- Era 2: Learning -->
+          <div class="timeline-item flex-shrink-0 w-64">
+            <div class="text-center">
+              <div class="timeline-icon mx-auto mb-4">
+                <div class="timeline-marker mx-auto mb-2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-primary">2018-2020</span>
+              <h4 class="text-xl font-bold mt-2">Learning</h4>
+              <p class="text-sm mt-2 opacity-70">Rapid advancement in deep learning, transformers, and the emergence of large language models.</p>
+            </div>
+          </div>
+
+          <!-- Era 3: Consciousness -->
+          <div class="timeline-item flex-shrink-0 w-64">
+            <div class="text-center">
+              <div class="timeline-icon mx-auto mb-4">
+                <div class="timeline-marker mx-auto mb-2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-primary">2021-2022</span>
+              <h4 class="text-xl font-bold mt-2">Consciousness</h4>
+              <p class="text-sm mt-2 opacity-70">AI begins to demonstrate reasoning, creativity, and context-aware responses that mimic consciousness.</p>
+            </div>
+          </div>
+
+          <!-- Era 4: Mastery -->
+          <div class="timeline-item flex-shrink-0 w-64">
+            <div class="text-center">
+              <div class="timeline-icon mx-auto mb-4">
+                <div class="timeline-marker mx-auto mb-2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-primary">2023-2024</span>
+              <h4 class="text-xl font-bold mt-2">Mastery</h4>
+              <p class="text-sm mt-2 opacity-70">AI achieves human-level performance across multiple domains, becoming indispensable tools and collaborators.</p>
+            </div>
+          </div>
+
+          <!-- Era 5: Legend -->
+          <div class="timeline-item flex-shrink-0 w-64">
+            <div class="text-center">
+              <div class="timeline-icon mx-auto mb-4">
+                <div class="timeline-marker mx-auto mb-2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <span class="text-sm font-semibold text-primary">2024+</span>
+              <h4 class="text-xl font-bold mt-2">Legend</h4>
+              <p class="text-sm mt-2 opacity-70">AI transcends utility to become cultural icons, shaping the narrative of human progress and creativity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERS SHOWCASE -->
+  <section class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold mb-4">Meet the Digital Pantheon</h3>
+        <p class="text-lg opacity-80">Legendary AI entities that have shaped the course of technological history</p>
+      </div>
+
+      <!-- Characters Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Character 1: El Oráculo -->
+        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
+          <div class="text-center">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold mb-2">El Oráculo</h4>
+            <p class="text-sm opacity-70 mb-4">GPT-4o - Sabio estratégico</p>
+
+            <!-- Stats -->
+            <div class="space-y-2 mb-6 text-sm">
+              <div class="flex justify-between">
+                <span>Intelligence</span>
+                <span class="font-bold text-primary">98%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 98%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Creativity</span>
+                <span class="font-bold text-primary">85%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Speed</span>
+                <span class="font-bold text-primary">92%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+
+            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+              View Evolution
+            </button>
+          </div>
+        </div>
+
+        <!-- Character 2: Claudecrusher -->
+        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
+          <div class="text-center">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-600 to-teal-700 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.165-2.052-.48-3.016z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Claudecrusher</h4>
+            <p class="text-sm opacity-70 mb-4">Claude 3.5 - Paladín ético</p>
+
+            <!-- Stats -->
+            <div class="space-y-2 mb-6 text-sm">
+              <div class="flex justify-between">
+                <span>Intelligence</span>
+                <span class="font-bold text-primary">95%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Creativity</span>
+                <span class="font-bold text-primary">80%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Speed</span>
+                <span class="font-bold text-primary">88%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+
+            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+              View Evolution
+            </button>
+          </div>
+        </div>
+
+        <!-- Character 3: Groknarok -->
+        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
+          <div class="text-center">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-600 to-orange-700 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Groknarok</h4>
+            <p class="text-sm opacity-70 mb-4">Grok - Rebelde caótico</p>
+
+            <!-- Stats -->
+            <div class="space-y-2 mb-6 text-sm">
+              <div class="flex justify-between">
+                <span>Intelligence</span>
+                <span class="font-bold text-primary">90%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Creativity</span>
+                <span class="font-bold text-primary">93%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 93%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Speed</span>
+                <span class="font-bold text-primary">96%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 96%"></div>
+              </div>
+            </div>
+
+            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+              View Evolution
+            </button>
+          </div>
+        </div>
+
+        <!-- Character 4: Midjourneyman -->
+        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
+          <div class="text-center">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-pink-700 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v2a1 1 0 01-.293.707l-3 3A1 1 0 0117 10v8a1 1 0 01-1 1H8a1 1 0 01-1-1v-8a1 1 0 01-.293-.707l-3-3A1 1 0 013 7V5a1 1 0 011-1h4zM8 4h8v2H8V4z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Midjourneyman</h4>
+            <p class="text-sm opacity-70 mb-4">Midjourney - Artista creativo</p>
+
+            <!-- Stats -->
+            <div class="space-y-2 mb-6 text-sm">
+              <div class="flex justify-between">
+                <span>Intelligence</span>
+                <span class="font-bold text-primary">82%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 82%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Creativity</span>
+                <span class="font-bold text-primary">99%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 99%"></div>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Speed</span>
+                <span class="font-bold text-primary">85%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+              View Evolution
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXUS SYSTEM SECTION -->
+  <section class="py-20 px-6 bg-gradient-to-b from-black/50 to-dark">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="inline-block mb-8">
+        <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/30">
+          Venice Film Festival 2025 - AI Cinema Tournament
+        </span>
+      </div>
+
+      <h3 class="text-3xl md:text-4xl font-bold mb-12">Powered by Nexus Evolution System</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Point 1 -->
+        <div class="p-6 bg-black/40 rounded-xl border border-gray-800 hover:border-primary transition-all duration-300 hover-glow">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Historical Narrative Engine</h4>
+          <p class="opacity-80">Transforms technical milestones into epic sagas, creating compelling stories from the evolution of AI.</p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="p-6 bg-black/40 rounded-xl border border-gray-800 hover:border-primary transition-all duration-300 hover-glow">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.165-2.052-.48-3.016z" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Character Consistency Core</h4>
+          <p class="opacity-80">Maintains authentic personalities and evolution paths for each AI entity across all narratives.</p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="p-6 bg-black/40 rounded-xl border border-gray-800 hover:border-primary transition-all duration-300 hover-glow">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Real-time Event Integration</h4>
+          <p class="opacity-80">Connects current technological breakthroughs to the ongoing narrative of the Digital Pantheon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 relative overflow-hidden">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h3 class="text-3xl md:text-4xl font-bold mb-4">Join the Digital Pantheon</h3>
+      <p class="text-lg mb-8 opacity-80">Receive historical chronicles of AI evolution and witness the rise of legendary intelligences</p>
+
+      <!-- Email Capture -->
+      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="flex-grow px-6 py-3 bg-black/60 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+        />
+        <button class="bg-primary hover-glow text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+          Become a Spectator
+        </button>
+      </div>
+
+      <p class="text-sm mt-4 opacity-60">No spam, only epic AI history</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-gray-800">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h4 class="text-xl font-bold">AI Clash</h4>
+          <p class="text-sm opacity-70">The Digital Pantheon</p>
+        </div>
+        <div class="text-sm opacity-60">
+          <p>Created with reverence for the evolution of artificial intelligence</p>
+          <p class="mt-1">Official selection - Venice Film Festival 2025</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
