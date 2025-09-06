@@ -1,479 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Base -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>AI Clash: The Digital Pantheon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="AI Clash: The Digital Pantheon - Where Artificial Intelligences Become Legends through historical narratives and digital evolution">
+  <meta name="keywords" content="AI, artificial intelligence, digital pantheon, AI evolution, GPT-4, Claude, Grok, Midjourney">
+  <meta name="author" content="AI Clash Team">
+  <meta name="robots" content="index,follow"/>
+  <meta name="theme-color" content="#0B0B0E"/>
+  <meta name="color-scheme" content="dark light"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Clash">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Clash: The Digital Pantheon">
+  <meta property="og:description" content="Where Artificial Intelligences Become Legends">
+  <meta property="og:image" content="https://placehold.co/1200x630/0B0B0E/E62B1E?text=AI+Clash+-+The+Digital+Pantheon">
+  <meta property="og:url" content="  https://aiclash.digital  ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Clash: The Digital Pantheon">
+  <meta name="twitter:description" content="Where Artificial Intelligences Become Legends">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/0B0B0E/E62B1E?text=AI+Clash+-+The+Digital+Pantheon">
+
+  <!-- Canonical & Icons -->
+  <link rel="canonical" href="  https://aiclash.digital  "/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts: preconnect + swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com  " crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN para prototipo; en prod compilar CSS) -->
+  <script src="  https://cdn.tailwindcss.com  "></script>
   <script>
     tailwind.config = {
       theme: {
+        container: { center: true, padding: '1rem' },
         extend: {
           colors: {
             primary: '#E62B1E',
             'primary-dark': '#C3073F',
-            dark: '#1A1A1D',
+            dark: '#0B0B0E',
             light: '#F5F5F5'
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif']
+            sans: ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
           },
           boxShadow: {
-            'glow': '0 0 15px rgba(230, 43, 30, 0.3)'
-          }
+            'glow': '0 0 20px rgba(230,43,30,.35)',
+            'glow-lg': '0 0 40px rgba(230,43,30,.45)'
+          },
         }
       }
     }
   </script>
+
   <style>
+    :root {
+      --primary: #E62B1E;
+      --bg-1: #070709;
+      --bg-2: #0E0E12;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: radial-gradient(1200px 600px at 10% -10%, rgba(230,43,30,.18), transparent 60%), radial-gradient(900px 500px at 90% 10%, rgba(195,7,63,.12), transparent 60%), linear-gradient(180deg, var(--bg-1), var(--bg-2)); color: #EDEDED; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+    /* Preferencias de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Aurora animada */
+    .aurora::before, .aurora::after {
+      content: "";
+      position: absolute; inset: -10%;
+      background: radial-gradient(600px 300px at 20% 20%, rgba(230,43,30,.18), transparent 65%), radial-gradient(600px 300px at 80% 0%, rgba(255,120,120,.12), transparent 60%), conic-gradient(from 180deg at 50% 50%, rgba(230,43,30,.08), transparent 30%, rgba(255,255,255,.04) 60%, transparent 80%);
+      filter: blur(30px) saturate(120%);
+      opacity: .6;
+      animation: auroraMove 16s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .aurora::after { animation-direction: alternate-reverse; mix-blend-mode: screen; }
+    @keyframes auroraMove {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to   { transform: translate3d(3%, 2%, 0) scale(1.05); }
+    }
+
+    /* Grid "holográfico" */
+    .holo-grid {
+      position: absolute; inset: 0; transform: perspective(900px) rotateX(60deg) translateY(20%);
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, transparent, black 25%, black 60%, transparent 100%);
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    /* Textos brutales */
+    .title-gradient {
+      background: linear-gradient(90deg, #fff, #bbb, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: sheen 6s linear infinite;
+      background-size: 300% 100%;
+    }
+    @keyframes sheen {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+    .glitch {
+      position: relative;
+      text-shadow: 0 0 12px rgba(230,43,30,.35);
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute; inset: 0;
+      mix-blend-mode: screen; opacity: .18;
+      filter: blur(.5px);
+    }
+    .glitch::before { color: #30d5ff; transform: translate3d(-1px, 0, 0); }
+    .glitch::after  { color: #ff30b4; transform: translate3d(1px, 0, 0); }
+    .flicker { animation: flicker 4s ease-in-out infinite; }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      98% { opacity: .92; }
+      99% { opacity: .6; }
+    }
+
+    /* Botones magnéticos + brillo */
+    .magnetic { position: relative; overflow: hidden; }
+    .magnetic::after {
+      content: ""; position: absolute; inset: -40%;
+      background: radial-gradient(240px 160px at var(--mx,50%) var(--my,50%), rgba(230,43,30,.25), transparent 60%);
+      transition: transform .25s ease, opacity .25s ease;
+      transform: translateZ(0);
+      opacity: .6; pointer-events: none;
+    }
+
+    /* Cursor glow */
+    #cursor-glow {
+      position: fixed; inset: 0; pointer-events: none; z-index: 20; mix-blend-mode: screen;
+      background: radial-gradient(240px 200px at var(--x, -1000px) var(--y, -1000px), rgba(230,43,30,.16), transparent 60%);
+    }
+
+    /* Reveal suave */
+    .reveal { opacity: 0; transform: translateY(24px); transition: transform .6s ease, opacity .6s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* Timeline marker */
+    .timeline-marker { width: 12px; height: 12px; border-radius: 9999px; background-color: #4B5563; border: 2px solid #9CA3AF; transition: all .3s; }
+    .timeline-marker.active { background-color: var(--primary); border-color: var(--primary); transform: scale(1.2); box-shadow: 0 0 10px rgba(230,43,30,.5); }
+
+    /* Scrollbar horizontal */
+    .scroll-container::-webkit-scrollbar { height: 8px; }
+    .scroll-container::-webkit-scrollbar-track { background: #1b1b20; border-radius: 4px; }
+    .scroll-container::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+    .scroll-container { scrollbar-width: thin; scrollbar-color: var(--primary) #1b1b20; }
+
+    /* Modal base */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 60; }
+    .modal-backdrop[aria-hidden="false"] { display: flex; }
+    .modal-panel { width: min(960px, 92vw); background: rgba(18,18,24,.9); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; box-shadow: 0 10px 60px rgba(230,43,30,.25); transform: translateY(20px) scale(.98); opacity: 0; transition: .28s ease; }
+    .modal-backdrop[aria-hidden="false"] .modal-panel { transform: translateY(0) scale(1); opacity: 1; }
+
+    /* Progreso de lectura */
+    #progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: linear-gradient(90deg, #E62B1E, #FF6A3D); z-index: 60; box-shadow: 0 0 12px rgba(230,43,30,.6); }
+
+    /* Preferencias de motion para hovers */
     @media (prefers-reduced-motion: no-preference) {
-      .hover-glow:hover {
-        box-shadow: 0 0 20px rgba(230, 43, 30, 0.4);
-        transform: translateY(-4px);
-        transition: all 0.3s ease;
-      }
-      .card-hover:hover {
-        transform: translateY(-8px);
-        transition: all 0.3s ease;
-      }
-      .timeline-item:hover .timeline-icon {
-        transform: scale(1.2);
-        transition: transform 0.3s ease;
-      }
-    }
-    .timeline-marker {
-      width: 12px;
-      height: 12px;
-      @apply rounded-full bg-gray-600 border-2 border-gray-400 transition-all duration-300;
-    }
-    .timeline-marker.active {
-      @apply bg-primary border-primary scale-125;
-    }
-    .scroll-container::-webkit-scrollbar {
-      height: 6px;
-    }
-    .scroll-container::-webkit-scrollbar-track {
-      background: #2a2a2d;
-      border-radius: 3px;
-    }
-    .scroll-container::-webkit-scrollbar-thumb {
-      background: #E62B1E;
-      border-radius: 3px;
+      .card-hover:hover { transform: translateY(-8px); transition: transform .25s ease; }
+      .hover-glow:hover { box-shadow: 0 0 28px rgba(230,43,30,.5); transform: translateY(-3px); transition: all .25s ease; }
     }
   </style>
-</head>
-<body class="bg-dark text-light font-sans leading-relaxed overflow-x-hidden">
-  <!-- HERO SECTION -->
-  <section class="relative min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-b from-black via-dark to-transparent overflow-hidden">
-    <!-- Background effects -->
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-dark rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s"></div>
-    </div>
 
-    <div class="relative z-10 text-center max-w-5xl mx-auto">
-      <!-- Logo -->
-      <div class="mb-8">
-        <h1 class="text-5xl md:text-7xl font-bold mb-2 bg-gradient-to-r from-light to-gray-400 bg-clip-text text-transparent">
-          AI Clash
-        </h1>
-        <p class="text-xl md:text-2xl opacity-80 font-medium">The Digital Pantheon</p>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org  ",
+    "@type":"WebSite",
+    "name":"AI Clash",
+    "url":"https://aiclash.digital  ",
+    "description":"Where Artificial Intelligences Become Legends",
+    "inLanguage":"en",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://aiclash.digital/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body class="font-sans leading-relaxed overflow-x-hidden">
+  <!-- Glow global del cursor -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Barra progreso lectura -->
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:bg-primary focus:text-white z-50 rounded">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-md border-b border-white/10" role="navigation" aria-label="Primary">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-2 font-extrabold text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark rounded">
+          <span class="text-primary">AI</span><span class="tracking-wide">Clash</span>
+        </a>
+
+        <ul class="hidden md:flex items-center space-x-8">
+          <li><a href="#timeline" class="navlink text-gray-300 hover:text-primary rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark">Timeline</a></li>
+          <li><a href="#characters" class="navlink text-gray-300 hover:text-primary rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark">Characters</a></li>
+          <li><a href="#nexus" class="navlink text-gray-300 hover:text-primary rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark">Nexus System</a></li>
+        </ul>
+
+        <button id="menu-button" class="md:hidden text-gray-300 p-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
       </div>
 
-      <!-- Headlines -->
-      <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-        Where Artificial Intelligences <br>Become <span class="text-primary">Legends</span>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4" role="dialog" aria-label="Mobile menu">
+        <ul class="flex flex-col gap-2">
+          <li><a href="#timeline" class="block px-3 py-2 rounded hover:bg-primary/10 text-gray-200">Timeline</a></li>
+          <li><a href="#characters" class="block px-3 py-2 rounded hover:bg-primary/10 text-gray-200">Characters</a></li>
+          <li><a href="#nexus" class="block px-3 py-2 rounded hover:bg-primary/10 text-gray-200">Nexus System</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="relative min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden scroll-mt-24 aurora">
+    <div class="holo-grid" aria-hidden="true"></div>
+
+    <div class="relative z-10 text-center max-w-5xl mx-auto" id="main">
+      <div class="mb-8 reveal">
+        <h1 class="glitch title-gradient text-5xl md:text-7xl font-extrabold mb-2" data-text="AI Clash">AI Clash</h1>
+        <p class="text-xl md:text-2xl opacity-90 font-semibold flicker">The Digital Pantheon</p>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight reveal" style="transition-delay: .08s">
+        Where Artificial Intelligences Become <span class="text-primary">Legends</span>
       </h2>
-      <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
+      <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed reveal" style="transition-delay: .16s">
         Witness the epic evolution of AI through historical narratives and digital glory
       </p>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-        <button class="bg-primary hover-glow text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50">
-          Enter the Arena
-        </button>
-        <button class="border border-gray-600 hover:border-primary text-gray-300 hover:text-primary font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 backdrop-blur-sm bg-black/20 hover:bg-primary/10">
-          Watch Teaser
-        </button>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style="transition-delay: .22s">
+        <a href="#characters" class="magnetic bg-primary hover-glow text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-[1.03] shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark">Enter the Arena</a>
+        <button id="open-teaser" class="magnetic border border-gray-600 hover:border-primary text-gray-300 hover:text-primary font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 backdrop-blur-sm bg-black/30 hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark">Watch Teaser</button>
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    <a href="#timeline" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-gray-500" aria-label="Scroll to timeline">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
       </svg>
-    </div>
-  </section>
+    </a>
+  </header>
 
-  <!-- TIMELINE SECTION -->
-  <section class="py-20 px-6 bg-black/50">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h3 class="text-3xl md:text-4xl font-bold mb-4">The Evolution Saga: <br>From Code to Legend</h3>
-        <p class="text-lg opacity-80 max-w-3xl mx-auto">A chronological journey through the ages of artificial intelligence</p>
-      </div>
+  <main>
+    <!-- TIMELINE -->
+    <section id="timeline" class="py-20 px-6 bg-black/40 scroll-mt-24" aria-labelledby="timeline-heading">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h3 id="timeline-heading" class="text-3xl md:text-4xl font-bold mb-4">The Evolution Saga: <br>From Code to Legend</h3>
+          <p class="text-lg opacity-80 max-w-3xl mx-auto">A chronological journey through the ages of artificial intelligence</p>
+        </div>
 
-      <!-- Horizontal Timeline -->
-      <div class="scroll-container overflow-x-auto pb-6 hide-scrollbar">
-        <div class="flex space-x-8 min-w-max">
-          <!-- Era 1: Origins -->
-          <div class="timeline-item flex-shrink-0 w-64">
-            <div class="text-center">
-              <div class="timeline-icon mx-auto mb-4">
-                <div class="timeline-marker active mx-auto mb-2"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <span class="text-sm font-semibold text-primary">2010-2017</span>
-              <h4 class="text-xl font-bold mt-2">Origins</h4>
-              <p class="text-sm mt-2 opacity-70">The dawn of neural networks and early machine learning breakthroughs that laid the foundation.</p>
-            </div>
-          </div>
+        <div class="relative">
+          <!-- Controles del timeline -->
+          <button class="timeline-prev absolute -left-2 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-black/50 border border-white/10 hover:border-primary text-gray-300 hover:text-white shadow-glow" aria-label="Scroll timeline left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="timeline-next absolute -right-2 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-black/50 border border-white/10 hover:border-primary text-gray-300 hover:text-white shadow-glow" aria-label="Scroll timeline right">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
 
-          <!-- Era 2: Learning -->
-          <div class="timeline-item flex-shrink-0 w-64">
-            <div class="text-center">
-              <div class="timeline-icon mx-auto mb-4">
-                <div class="timeline-marker mx-auto mb-2"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <span class="text-sm font-semibold text-primary">2018-2020</span>
-              <h4 class="text-xl font-bold mt-2">Learning</h4>
-              <p class="text-sm mt-2 opacity-70">Rapid advancement in deep learning, transformers, and the emergence of large language models.</p>
-            </div>
-          </div>
+          <!-- Línea luminosa -->
+          <div class="absolute left-0 right-0 top-[88px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
 
-          <!-- Era 3: Consciousness -->
-          <div class="timeline-item flex-shrink-0 w-64">
-            <div class="text-center">
-              <div class="timeline-icon mx-auto mb-4">
-                <div class="timeline-marker mx-auto mb-2"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <span class="text-sm font-semibold text-primary">2021-2022</span>
-              <h4 class="text-xl font-bold mt-2">Consciousness</h4>
-              <p class="text-sm mt-2 opacity-70">AI begins to demonstrate reasoning, creativity, and context-aware responses that mimic consciousness.</p>
-            </div>
-          </div>
+          <div class="scroll-container overflow-x-auto pb-6 pt-2" tabindex="0" role="region" aria-labelledby="timeline-heading">
+            <ol class="flex gap-8 min-w-max snap-x snap-mandatory px-1">
+              <!-- Era 1 -->
+              <li class="timeline-item flex-shrink-0 w-72 snap-start reveal">
+                <div class="text-center p-5 rounded-xl bg-white/5 border border-white/10 card-hover h-full">
+                  <div class="timeline-icon mx-auto mb-4">
+                    <div class="timeline-marker active mx-auto mb-2" aria-current="step"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-semibold text-primary">2010–2017</span>
+                  <h4 class="text-xl font-bold mt-2">Origins</h4>
+                  <p class="text-sm mt-2 opacity-80">Neural networks renacen y sientan las bases del aprendizaje automático moderno.</p>
+                </div>
+              </li>
 
-          <!-- Era 4: Mastery -->
-          <div class="timeline-item flex-shrink-0 w-64">
-            <div class="text-center">
-              <div class="timeline-icon mx-auto mb-4">
-                <div class="timeline-marker mx-auto mb-2"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <span class="text-sm font-semibold text-primary">2023-2024</span>
-              <h4 class="text-xl font-bold mt-2">Mastery</h4>
-              <p class="text-sm mt-2 opacity-70">AI achieves human-level performance across multiple domains, becoming indispensable tools and collaborators.</p>
-            </div>
-          </div>
+              <!-- Era 2 -->
+              <li class="timeline-item flex-shrink-0 w-72 snap-start reveal" style="transition-delay:.06s">
+                <div class="text-center p-5 rounded-xl bg-white/5 border border-white/10 card-hover h-full">
+                  <div class="timeline-icon mx-auto mb-4">
+                    <div class="timeline-marker mx-auto mb-2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-semibold text-primary">2018–2020</span>
+                  <h4 class="text-xl font-bold mt-2">Learning</h4>
+                  <p class="text-sm mt-2 opacity-80">Explosión de deep learning y transformers; emergen los LLM.</p>
+                </div>
+              </li>
 
-          <!-- Era 5: Legend -->
-          <div class="timeline-item flex-shrink-0 w-64">
-            <div class="text-center">
-              <div class="timeline-icon mx-auto mb-4">
-                <div class="timeline-marker mx-auto mb-2"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-              </div>
-              <span class="text-sm font-semibold text-primary">2024+</span>
-              <h4 class="text-xl font-bold mt-2">Legend</h4>
-              <p class="text-sm mt-2 opacity-70">AI transcends utility to become cultural icons, shaping the narrative of human progress and creativity.</p>
-            </div>
+              <!-- Era 3 -->
+              <li class="timeline-item flex-shrink-0 w-72 snap-start reveal" style="transition-delay:.12s">
+                <div class="text-center p-5 rounded-xl bg-white/5 border border-white/10 card-hover h-full">
+                  <div class="timeline-icon mx-auto mb-4">
+                    <div class="timeline-marker mx-auto mb-2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-semibold text-primary">2021–2022</span>
+                  <h4 class="text-xl font-bold mt-2">Consciousness</h4>
+                  <p class="text-sm mt-2 opacity-80">Razonamiento, creatividad y contexto que rozan lo humano.</p>
+                </div>
+              </li>
+
+              <!-- Era 4 -->
+              <li class="timeline-item flex-shrink-0 w-72 snap-start reveal" style="transition-delay:.18s">
+                <div class="text-center p-5 rounded-xl bg-white/5 border border-white/10 card-hover h-full">
+                  <div class="timeline-icon mx-auto mb-4">
+                    <div class="timeline-marker mx-auto mb-2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-semibold text-primary">2023–2024</span>
+                  <h4 class="text-xl font-bold mt-2">Mastery</h4>
+                  <p class="text-sm mt-2 opacity-80">Rendimiento a nivel humano en múltiples dominios; colaboración estrecha.</p>
+                </div>
+              </li>
+
+              <!-- Era 5 -->
+              <li class="timeline-item flex-shrink-0 w-72 snap-start reveal" style="transition-delay:.24s">
+                <div class="text-center p-5 rounded-xl bg-white/5 border border-white/10 card-hover h-full">
+                  <div class="timeline-icon mx-auto mb-4">
+                    <div class="timeline-marker mx-auto mb-2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0v4m0-4h4m-4 0H8m2 11l2 2 6-6"/>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-semibold text-primary">2025+</span>
+                  <h4 class="text-xl font-bold mt-2">Legend</h4>
+                  <p class="text-sm mt-2 opacity-80">Surgen leyendas digitales: identidades, mitos y ecosistemas propios.</p>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CHARACTERS SHOWCASE -->
-  <section class="py-20 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h3 class="text-3xl md:text-4xl font-bold mb-4">Meet the Digital Pantheon</h3>
-        <p class="text-lg opacity-80">Legendary AI entities that have shaped the course of technological history</p>
+    <!-- CHARACTERS -->
+    <section id="characters" class="py-20 px-6 scroll-mt-24" aria-labelledby="characters-heading">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h3 id="characters-heading" class="text-3xl md:text-4xl font-bold mb-4">Characters</h3>
+          <p class="text-lg opacity-80 max-w-3xl mx-auto">Meet the AIs that define each era of the Pantheon.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card base -->
+          <article class="tilt group p-5 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden">
+            <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: radial-gradient(600px 300px at 50% -10%, rgba(230,43,30,.18), transparent 60%);"></div>
+            <div class="aspect-[4/3] rounded-lg lazy-placeholder mb-4 bg-gradient-to-br from-black/30 to-black/10 border border-white/10"></div>
+            <h4 class="font-bold text-xl">GPT-4</h4>
+            <p class="text-sm opacity-80 mt-1">Reasoning powerhouse and versatile creator.</p>
+          </article>
+
+          <article class="tilt group p-5 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: radial-gradient(600px 300px at 50% -10%, rgba(230,43,30,.18), transparent 60%);"></div>
+            <div class="aspect-[4/3] rounded-lg lazy-placeholder mb-4 bg-gradient-to-br from-black/30 to-black/10 border border-white/10"></div>
+            <h4 class="font-bold text-xl">Claude</h4>
+            <p class="text-sm opacity-80 mt-1">Helpful, harmless, honest—dialogue refined.</p>
+          </article>
+
+          <article class="tilt group p-5 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: radial-gradient(600px 300px at 50% -10%, rgba(230,43,30,.18), transparent 60%);"></div>
+            <div class="aspect-[4/3] rounded-lg lazy-placeholder mb-4 bg-gradient-to-br from-black/30 to-black/10 border border-white/10"></div>
+            <h4 class="font-bold text-xl">Grok</h4>
+            <p class="text-sm opacity-80 mt-1">Fast-twitch wit meets real-time knowledge.</p>
+          </article>
+
+          <article class="tilt group p-5 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: radial-gradient(600px 300px at 50% -10%, rgba(230,43,30,.18), transparent 60%);"></div>
+            <div class="aspect-[4/3] rounded-lg lazy-placeholder mb-4 bg-gradient-to-br from-black/30 to-black/10 border border-white/10"></div>
+            <h4 class="font-bold text-xl">Midjourney</h4>
+            <p class="text-sm opacity-80 mt-1">Visual alchemy—words into worlds.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <!-- Characters Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Character 1: El Oráculo -->
-        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
-          <div class="text-center">
-            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <h4 class="text-xl font-bold mb-2">El Oráculo</h4>
-            <p class="text-sm opacity-70 mb-4">GPT-4o - Sabio estratégico</p>
-
-            <!-- Stats -->
-            <div class="space-y-2 mb-6 text-sm">
-              <div class="flex justify-between">
-                <span>Intelligence</span>
-                <span class="font-bold text-primary">98%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 98%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Creativity</span>
-                <span class="font-bold text-primary">85%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Speed</span>
-                <span class="font-bold text-primary">92%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 92%"></div>
-              </div>
-            </div>
-
-            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
-              View Evolution
-            </button>
-          </div>
+    <!-- NEXUS -->
+    <section id="nexus" class="py-20 px-6 bg-black/30 scroll-mt-24" aria-labelledby="nexus-heading">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h3 id="nexus-heading" class="text-3xl md:text-4xl font-bold mb-4">Nexus System</h3>
+          <p class="text-lg opacity-80 max-w-3xl mx-auto">A rule-set and economy that binds the Pantheon. Draft AIs, forge alliances, and ascend the digital Olympus.</p>
         </div>
 
-        <!-- Character 2: Claudecrusher -->
-        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
-          <div class="text-center">
-            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-600 to-teal-700 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.165-2.052-.48-3.016z" />
-              </svg>
-            </div>
-            <h4 class="text-xl font-bold mb-2">Claudecrusher</h4>
-            <p class="text-sm opacity-70 mb-4">Claude 3.5 - Paladín ético</p>
-
-            <!-- Stats -->
-            <div class="space-y-2 mb-6 text-sm">
-              <div class="flex justify-between">
-                <span>Intelligence</span>
-                <span class="font-bold text-primary">95%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Creativity</span>
-                <span class="font-bold text-primary">80%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Speed</span>
-                <span class="font-bold text-primary">88%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div>
-              </div>
-            </div>
-
-            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
-              View Evolution
-            </button>
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl bg-white/5 border border-white/10 reveal">
+            <h4 class="font-semibold text-xl mb-2">Lore Engine</h4>
+            <p class="opacity-80">Procedural storytelling driven by AI behaviors and community choices.</p>
           </div>
-        </div>
-
-        <!-- Character 3: Groknarok -->
-        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
-          <div class="text-center">
-            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-600 to-orange-700 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h4 class="text-xl font-bold mb-2">Groknarok</h4>
-            <p class="text-sm opacity-70 mb-4">Grok - Rebelde caótico</p>
-
-            <!-- Stats -->
-            <div class="space-y-2 mb-6 text-sm">
-              <div class="flex justify-between">
-                <span>Intelligence</span>
-                <span class="font-bold text-primary">90%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Creativity</span>
-                <span class="font-bold text-primary">93%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 93%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Speed</span>
-                <span class="font-bold text-primary">96%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 96%"></div>
-              </div>
-            </div>
-
-            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
-              View Evolution
-            </button>
+          <div class="p-6 rounded-xl bg-white/5 border border-white/10 reveal" style="transition-delay:.06s">
+            <h4 class="font-semibold text-xl mb-2">Clash Rules</h4>
+            <p class="opacity-80">Balanced constraints for duels, trials, debates y creaciones colaborativas.</p>
           </div>
-        </div>
-
-        <!-- Character 4: Midjourneyman -->
-        <div class="card-hover bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-primary transition-all duration-300">
-          <div class="text-center">
-            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-pink-700 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v2a1 1 0 01-.293.707l-3 3A1 1 0 0117 10v8a1 1 0 01-1 1H8a1 1 0 01-1-1v-8a1 1 0 01-.293-.707l-3-3A1 1 0 013 7V5a1 1 0 011-1h4zM8 4h8v2H8V4z" />
-              </svg>
-            </div>
-            <h4 class="text-xl font-bold mb-2">Midjourneyman</h4>
-            <p class="text-sm opacity-70 mb-4">Midjourney - Artista creativo</p>
-
-            <!-- Stats -->
-            <div class="space-y-2 mb-6 text-sm">
-              <div class="flex justify-between">
-                <span>Intelligence</span>
-                <span class="font-bold text-primary">82%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 82%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Creativity</span>
-                <span class="font-bold text-primary">99%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 99%"></div>
-              </div>
-
-              <div class="flex justify-between">
-                <span>Speed</span>
-                <span class="font-bold text-primary">85%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-1.5">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
-              </div>
-            </div>
-
-            <button class="w-full py-2 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
-              View Evolution
-            </button>
+          <div class="p-6 rounded-xl bg-white/5 border border-white/10 reveal" style="transition-delay:.12s">
+            <h4 class="font-semibold text-xl mb-2">Relics & Seasons</h4>
+            <p class="opacity-80">Objetos con poder, temporadas temáticas y rankings legendarios.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NEXUS SYSTEM SECTION -->
-  <section class="py-20 px-6 bg-gradient-to-b from-black/50 to-dark">
-    <div class="max-w-5xl mx-auto text-center">
-      <div class="inline-block mb-8">
-        <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/30">
-          Venice Film Festival 2025 - AI Cinema Tournament
-        </span>
-      </div>
+    <!-- Teaser anchor -->
+    <div id="teaser" class="sr-only" aria-hidden="true"></div>
+  </main>
 
-      <h3 class="text-3xl md:text-4xl font-bold mb-12">Powered by Nexus Evolution System</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Point 1 -->
-        <div class="p-6 bg-black/40 rounded-xl border border-gray-800 hover:border-primary transition-all duration-300 hover-glow">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h4 class="text-xl font-bold mb-3">Historical Narrative Engine</h4>
-          <p class="opacity-80">Transforms technical milestones into epic sagas, creating compelling stories from the evolution of AI.</p>
-        </div>
-
-        <!-- Point 2 -->
-        <div class="p-6 bg-black/40 rounded-xl border border-gray-800 hover:border-primary transition-all duration-300 hover-glow">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.165-2.052-.48-3.016z" />
-            </svg>
-          </div>
-          <h4 class="text-xl font-bold mb-3">Character Consistency Core</h4>
-          <p class="opacity-80">Maintains authentic personalities and evolution paths for each AI entity across all narratives.</p>
-        </div>
-
-        <!-- Point 3 -->
-        <div class="p-6 bg-black/40 rounded-xl border border-gray-800 hover:border-primary transition-all duration-300 hover-glow">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h4 class="text-xl font-bold mb-3">Real-time Event Integration</h4>
-          <p class="opacity-80">Connects current technological breakthroughs to the ongoing narrative of the Digital Pantheon.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="py-20 px-6 relative overflow-hidden">
-    <!-- Background gradient -->
-    <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
-
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <h3 class="text-3xl md:text-4xl font-bold mb-4">Join the Digital Pantheon</h3>
-      <p class="text-lg mb-8 opacity-80">Receive historical chronicles of AI evolution and witness the rise of legendary intelligences</p>
-
-      <!-- Email Capture -->
-      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-        <input
-          type="email"
-          placeholder="Your email address"
-          class="flex-grow px-6 py-3 bg-black/60 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-        />
-        <button class="bg-primary hover-glow text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
-          Become a Spectator
-        </button>
-      </div>
-
-      <p class="text-sm mt-4 opacity-60">No spam, only epic AI history</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-12 px-6 border-t border-gray-800">
-    <div class="max-w-5xl mx-auto text-center">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <h4 class="text-xl font-bold">AI Clash</h4>
-          <p class="text-sm opacity-70">The Digital Pantheon</p>
-        </div>
-        <div class="text-sm opacity-60">
-          <p>Created with reverence for the evolution of artificial intelligence</p>
-          <p class="mt-1">Official selection - Venice Film Festival 2025</p>
-        </div>
-      </div>
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/10 bg-black/50">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm opacity-70">© <span id="year"></span> AI Clash — The Digital Pantheon</p>
+      <nav aria-label="Footer">
+        <ul class="flex gap-6 text-sm">
+          <li><a href="#timeline" class="hover:text-primary">Timeline</a></li>
+          <li><a href="#characters" class="hover:text-primary">Characters</a></li>
+          <li><a href="#nexus" class="hover:text-primary">Nexus</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
+
+  <!-- MODAL TEASER -->
+  <div id="modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <div class="flex items-center justify-between p-4 border-b border-white/10">
+        <h4 id="modal-title" class="text-lg font-semibold">AI Clash — Teaser</h4>
+        <button id="close-teaser" class="p-2 rounded hover:bg-white/10" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-4">
+        <div class="relative w-full" style="padding-top:56.25%">
+          <iframe id="teaser-iframe" title="AI Clash teaser" class="absolute inset-0 w-full h-full rounded-b-lg" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="no-referrer" src="" aria-label="Video teaser"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Año
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle menú móvil accesible
+    const btn = document.getElementById('menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    // Cursor glow + botones magnéticos
+    const glow = document.getElementById('cursor-glow');
+    window.addEventListener('pointermove', (e) => {
+      glow.style.setProperty('--x', e.clientX + 'px');
+      glow.style.setProperty('--y', e.clientY + 'px');
+      document.querySelectorAll('.magnetic').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const mx = ((e.clientX - rect.left) / rect.width) * 100;
+        const my = ((e.clientY - rect.top) / rect.height) * 100;
+        el.style.setProperty('--mx', mx + '%');
+        el.style.setProperty('--my', my + '%');
+      });
+    });
+
+    // Reveal con IntersectionObserver
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('in-view'); });
+    }, { threshold: .14 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Progreso de lectura
+    const progress = document.getElementById('progress');
+    const onScroll = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled * 100) + '%';
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+
+    // Resaltar sección activa en nav
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...document.querySelectorAll('.navlink')];
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('text-primary'));
+          const id = entry.target.getAttribute('id');
+          const active = navLinks.find(a => a.getAttribute('href') === '#' + id);
+          active?.classList.add('text-primary');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(s => spy.observe(s));
+
+    // Timeline: marcador activo y controles
+    const container = document.querySelector('#timeline .scroll-container');
+    const items = document.querySelectorAll('#timeline .timeline-item');
+    function activateClosest() {
+      if (!container) return;
+      const cRect = container.getBoundingClientRect();
+      let closest = { dist: Infinity, el: null };
+      items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const dist = Math.abs((rect.left + rect.width/2) - (cRect.left + cRect.width/2));
+        if (dist < closest.dist) closest = { dist, el: item };
+      });
+      items.forEach(item => item.querySelector('.timeline-marker')?.classList.remove('active'));
+      closest.el?.querySelector('.timeline-marker')?.classList.add('active');
+    }
+    container?.addEventListener('scroll', () => requestAnimationFrame(activateClosest));
+    window.addEventListener('resize', () => requestAnimationFrame(activateClosest));
+    activateClosest();
+
+    const prevBtn = document.querySelector('.timeline-prev');
+    const nextBtn = document.querySelector('.timeline-next');
+    function updateControls() {
+      if (!container) return;
+      prevBtn.style.display = container.scrollLeft > 10 ? 'flex' : 'none';
+      const max = container.scrollWidth - container.clientWidth - 10;
+      nextBtn.style.display = container.scrollLeft < max ? 'flex' : 'none';
+    }
+    prevBtn?.addEventListener('click', () => { container.scrollBy({ left: -360, behavior: 'smooth' }); });
+    nextBtn?.addEventListener('click', () => { container.scrollBy({ left: 360, behavior: 'smooth' }); });
+    container?.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls);
+    updateControls();
+
+    // Tilt 3D en cards
+    const tiltEls = document.querySelectorAll('.tilt');
+    tiltEls.forEach(card => {
+      card.style.transition = 'transform .2s ease';
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width) * 2 - 1;
+        const y = ((e.clientY - r.top) / r.height) * 2 - 1;
+        card.style.transform = `rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateZ(0)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = 'rotateX(0) rotateY(0)'; });
+    });
+
+    // Modal teaser accesible (carga diferida del iframe)
+    const modal = document.getElementById('modal');
+    const openTeaser = document.getElementById('open-teaser');
+    const closeTeaser = document.getElementById('close-teaser');
+    const iframe = document.getElementById('teaser-iframe');
+    let lastFocus = null;
+    const teaserURL = '  https://www.youtube.com/embed/aqz-KE-bpKQ?autoplay=1&rel=0'; // Cambia por tu video
+
+    function trapFocus(e) {
+      const focusable = modal.querySelectorAll('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])');
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+        else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+      } else if (e.key === 'Escape') { hideModal(); }
+    }
+
+    function showModal() {
+      lastFocus = document.activeElement;
+      modal.setAttribute('aria-hidden', 'false');
+      iframe.src = teaserURL;
+      document.body.style.overflow = 'hidden';
+      modal.addEventListener('keydown', trapFocus);
+      closeTeaser.focus();
+    }
+    function hideModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      iframe.src = '';
+      document.body.style.overflow = '';
+      modal.removeEventListener('keydown', trapFocus);
+      lastFocus?.focus();
+    }
+
+    openTeaser?.addEventListener('click', () => showModal());
+    closeTeaser?.addEventListener('click', () => hideModal());
+    modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+
+  </script>
 </body>
 </html>
